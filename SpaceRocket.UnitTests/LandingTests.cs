@@ -26,11 +26,51 @@ namespace SpaceRocket.UnitTests
         {
             ISize landingAreaSize = Size.Create(100, 100);
             ISize platformSize = Size.Create(10, 10);
-            IPosition platformoutPosition = Position.Create(101, 5);
+            IPosition platformOutPosition = Position.Create(101, 5);
             IPosition platformPosition = Position.Create(95, 95);
 
-            Assert.Throws<OutOfLandingAreaDomainException>(() => Landings.Create(landingAreaSize, platformSize, platformoutPosition));
+            Assert.Throws<OutOfLandingAreaDomainException>(() => Landings.Create(landingAreaSize, platformSize, platformOutPosition));
             Assert.Throws<OutOfLandingAreaDomainException>(() => Landings.Create(landingAreaSize, platformSize, platformPosition));
+        }
+
+        [Fact]
+        public void Rocket_landing_in_custom_platform_success()
+        {
+            ISize landingAreaSize = Size.Create(100, 100);
+            ISize platformSize = Size.Create(20, 20);
+            IPosition platformPosition = Position.Create(40, 5);
+            Landings landings = Landings.Create(landingAreaSize, platformSize, platformPosition);
+
+            LandingResponseEnum result = landings.Land(42, 8);
+
+            Assert.Equal(LandingResponseEnum.OkForLanding, result);
+        }
+
+        [Fact]
+        public void Rocket_landing_in_custom_platform_out_platform()
+        {
+            ISize landingAreaSize = Size.Create(100, 100);
+            ISize platformSize = Size.Create(20, 20);
+            IPosition platformPosition = Position.Create(40, 5);
+            Landings landings = Landings.Create(landingAreaSize, platformSize, platformPosition);
+
+            LandingResponseEnum result = landings.Land(5, 5);
+            Assert.Equal(LandingResponseEnum.OutOfPlatform, result);
+        }
+
+        [Fact]
+        public void Rocket_landing_in_custom_platform_class()
+        {
+            ISize landingAreaSize = Size.Create(100, 100);
+            ISize platformSize = Size.Create(20, 20);
+            IPosition platformPosition = Position.Create(40, 5);
+            Landings landings = Landings.Create(landingAreaSize, platformSize, platformPosition);
+
+            landings.Land(42, 8);
+
+            LandingResponseEnum result = landings.Land(43, 8);
+
+            Assert.Equal(LandingResponseEnum.Clash, result);
         }
 
 
