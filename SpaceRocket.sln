@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceRocket.Domain", "Space
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceRocket.Core", "SpaceRocket.Core\SpaceRocket.Core.csproj", "{3DED13FA-5F06-4DEB-976C-606209646A50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpaceRocket.UnitTests", "SpaceRocket.UnitTests\SpaceRocket.UnitTests.csproj", "{BB3BD529-ADE2-4B03-B9A3-A92E1DBF1F9D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{3DED13FA-5F06-4DEB-976C-606209646A50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3DED13FA-5F06-4DEB-976C-606209646A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3DED13FA-5F06-4DEB-976C-606209646A50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB3BD529-ADE2-4B03-B9A3-A92E1DBF1F9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB3BD529-ADE2-4B03-B9A3-A92E1DBF1F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB3BD529-ADE2-4B03-B9A3-A92E1DBF1F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB3BD529-ADE2-4B03-B9A3-A92E1DBF1F9D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

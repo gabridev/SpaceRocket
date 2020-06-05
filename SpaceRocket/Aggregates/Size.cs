@@ -1,8 +1,9 @@
-﻿using SpaceRocket.Domain.Interfaces;
+﻿using SpaceRocket.Core.Abstracts;
+using SpaceRocket.Domain.Interfaces;
 
 namespace SpaceRocket.Domain.Aggregates
 {
-    public class Size : ISize
+    public class Size : ValueObject, ISize
     {
         public int X { get; }
         public int Y { get; }
