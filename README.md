@@ -4,4 +4,4 @@ It is a .NET library that has been developed using patterns such as DDD, reactiv
 
 ## Possible improvements
 
-Create domain events and launch them in the aggregate Also add handlers.
+Create domain events and handlers. Also dispatch them.
